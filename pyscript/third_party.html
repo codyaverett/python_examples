@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>local modules</title>
+    <!-- linking to PyScript assets -->
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+  </head>
+  <body>
+  <!-- thirdparty dependencies added here -->
+ <py-env>
+    - numpy 
+    - matplotlib
+  </py-env> 
+  <py-script>
+import numpy as np
+import matplotlib.pyplot as plt
+arr = np.array([1, 2, 3, 4, 5])
+plt.plot(arr)
+plt
+  <py-script>
+  </body>
+</html>
