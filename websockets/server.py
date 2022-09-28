@@ -1,16 +1,24 @@
 #!/usr/bin/env python
 
+# Python websocket server example
+# https://websockets.readthedocs.io/en/stable/intro.html
+
 import asyncio
-from websockets import serve
+from websocket import serve
 
 
-async def echo(websocket):
-    async for message in websocket:
-        await websocket.send(message)
+async def hello(websocket, path):
+    name = await websocket.recv()
+    print(f"< {name}")
 
+    greeting = f"Hello {name}!"
 
-async def main():
-    async with serve(echo, "localhost", 8765):
-        await asyncio.Future()  # run forever
+    await websocket.send(greeting)
+    print(f"> {greeting}")
 
-asyncio.run(main())
+try:
+    asyncio.get_event_loop().run_until_complete(
+        serve(hello, 'localhost', 8765))
+    asyncio.get_event_loop().run_forever()
+except KeyboardInterrupt:
+    print("Server stopped")
