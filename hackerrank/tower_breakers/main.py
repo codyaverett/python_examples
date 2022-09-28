@@ -34,7 +34,7 @@ def towerBreakers(n, m):
         return 2
     
     # n is odd
-    return 1;
+    return 1
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
