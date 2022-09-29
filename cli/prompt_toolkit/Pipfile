@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 prompt-toolkit = "*"
+pygments = "*"
 
 [dev-packages]
 
