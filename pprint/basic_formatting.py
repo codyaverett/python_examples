@@ -6,3 +6,4 @@ json_response = response.read()
 users = json.loads(json_response)
 
 print(users)
+print(users[0], depth=2, indent=4)
