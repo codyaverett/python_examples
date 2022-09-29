@@ -16,10 +16,11 @@ crops = [(251, 236, 94), (13, 138, 4), (245, 222, 180)]
 
 def get_euclidean_distance(coords1: Coordinates, coords2: Coordinates):
 
+    # I changed the data input to not need the literal ast parser
     # convert coords1 to a Coordinate type if it isn't already
-    if not isinstance(coords1, tuple) and isstring(coords1):
-        # create a tuple from a string
-        coords1 = tuple(map(int, coords1.split(',')))
+    # if not isinstance(coords1, tuple) and isstring(coords1):
+    #     # create a tuple from a string
+    #     coords1 = tuple(map(int, coords1.split(',')))
 
     # err ValueError: too many values to unpack (expected 3)
     (x1, y1, z1) = coords1
